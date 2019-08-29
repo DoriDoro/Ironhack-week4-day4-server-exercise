@@ -68,7 +68,7 @@ app.post("/user", (req, res) => {
    // res.send("@toto : add new user");
     var msg;
     if(req.body.name !== "") {
-        users.push({name: req.body.name, id: users.length});
+        users.push({name: req.body.name, id: users.length + 1});
         msg = "user successfully created!"
     } else {
         msg = "please fill name field !";
