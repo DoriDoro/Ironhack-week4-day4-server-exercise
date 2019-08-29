@@ -15,12 +15,31 @@ app.get("/", (req, res) => {
     res.render("index");
 });
 
-app.get("/users", (req, res) => {
-    res.render("users");
-});
+// hardcoded variables, used for demo purpose
+const users = [ // fake datatbase
+    {name: "Jill", id: 1}, // index 0
+    {name: "Bill", id: 2}, // index 1
+    {name: "Will", id: 3}  // index 2
+];
+
 
 app.get("/users", (req, res) => {
-    res.render("users/:id");
+    res.render("users", {users});
+});
+
+app.get("/users/:id", (req, res) => {
+    // console.log(req.params);
+    // res.send("ok");
+    
+    console.log(req.params.id);
+    
+    const foundUser = users.filter(user => 
+        user.id === Number(req.params.id))[0]; // 0 to access first index
+        // of the returned array (filter always returns an array)
+        //use Number() because the req.params.id is a string
+    res.render("users_details", {
+        user: foundUser
+    });
 });
 
 const listener = app.listen(4000, ()=> {

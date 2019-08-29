@@ -1,1 +1,13 @@
-<h3>Hello</h3>
+<div class="page users">
+    <h1 class="title"> Users details </h1>
+    {{#unless users}}
+        <p> Sorry, no user found.</p>
+    {{/unless}}
+    {{#each users}}
+        <div class="user">
+            <p>{{this.name}} (id: {{this.id}})</p>
+            <a href="/users/{{this.id}}">GET user info</a>
+            <br/><span>---------------------------</span>
+        </div>
+    {{/each}}
+</div>
