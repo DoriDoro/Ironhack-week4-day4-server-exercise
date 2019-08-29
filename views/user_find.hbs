@@ -1,0 +1,10 @@
+<div class="page">
+    <h1 class="title">Find User</h1>
+    {{#unless user}}
+    <p>Sorry, no user found!</p>
+    {{/unless}}
+
+    {{#if user}}
+    <p>Yey, we found {{user.name}}</p>
+    {{/if}}
+</div>

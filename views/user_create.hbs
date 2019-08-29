@@ -1,0 +1,11 @@
+<form method="post" action="/user">
+    {{#if msg}}
+    <p>{{ msg }}</p>
+    {{/if}}
+
+    <h1>Create new User</h1>
+    <label for="new_user_name">name:</label>
+    <input id="new_user_name" type="text" name="name">
+    {{!-- <input type="number" name="age"> --}}
+    <button>ok</button>
+</form>

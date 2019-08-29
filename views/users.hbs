@@ -1,4 +1,13 @@
 <div class="page users">
+
+    <hr/>
+
+    <form action="/find-user">
+        <label for="user_name">user name ?</label>
+        <input id="user_name" type="text" name="name"> <!-- name= neccessary to get the entered name to the object which we create -->
+        <button>find</button>
+    </form>
+
     <h1 class="title"> Users details </h1>
     {{#unless users}}
         <p> Sorry, no user found.</p>
